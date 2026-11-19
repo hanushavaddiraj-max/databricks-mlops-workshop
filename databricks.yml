@@ -75,7 +75,7 @@ include:
   #   1) databricks bundle run batch_inference_job         # creates fraud_predictions
   #   2) databricks bundle run serving_log_processing_job  # creates fraud_serving_inference
   # then uncomment the include below and redeploy.
-  # - ./resources/monitoring-resource.yml
+  - ./resources/monitoring-resource.yml
 
 # Shared medallion infrastructure (landing/bronze/silver/gold schemas + the raw_data
 # landing volume). Declared ONLY on the clean (non-development) targets so that:
@@ -113,8 +113,8 @@ targets:
       schemas:
         fraud_ml:
           name: fraud
-    # workspace:
-    #   host: https://adb-xxxxxxxxxxxxxxxx.x.azuredatabricks.net  # add your workspace URL if deploying from a local CLI
+    workspace:
+      host: https://adb-7405617328303130.10.azuredatabricks.net
 
   dev:
     variables:
